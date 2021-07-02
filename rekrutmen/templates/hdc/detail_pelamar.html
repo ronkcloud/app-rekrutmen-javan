@@ -1,0 +1,38 @@
+{% extends 'public/base.html' %}
+
+{% block title %}
+{{ job_list.job }} | {{ job_list.pelamar_id.member }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="apply-job-card">
+        <table class="review-tbl">
+            <caption style="display: none;">review_tbl</caption>
+            <tr>
+                <td>Nama pelamar: </td>
+                <td>{{ job_list.pelamar_id.member }}</td>
+            </tr>
+            <tr>
+                <td>Pekerjaan yang dilamar: </td>
+                <td>{{ job_list.job }}</td>
+            </tr>
+            <tr>
+                <td>Status saat ini: </td>
+                <td>{{ job_list.status }}</td>
+            </tr>
+            <tr>
+                <td>Perbarui status: </td>
+                <td>        
+                    <form method="POST">
+                    {% csrf_token %}
+                    {{ form.status }}
+                    <input type="submit" value="update">
+                </form>
+            </td>
+            </tr>
+        </table>
+
+    </div>   
+</div>
+{% endblock %}

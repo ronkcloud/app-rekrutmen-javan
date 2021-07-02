@@ -1,0 +1,340 @@
+@font-face {
+    font-family: "nasalization";
+    src: url('nasalization-rg.otf');
+    }
+
+:root {
+  --main-light: #DFEEEA;
+  --main-dark: #2F5D62;
+  --dark-accent: #5E8B7E;
+  --light-accent: #A7C4BC;
+}
+
+body {
+    background-color: var(--main-light)
+  }
+
+/* navbar styling */
+.navbar {
+    background-color:   var(--main-dark);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 0px;
+    border-radius: 0px 0px 30px 30px
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+}
+.navbar li {
+    float: right;
+}
+.navbar li a {
+    display: block;
+    color: var(--main-light);
+    text-align: center;
+    padding: 7px 25px;
+    border-radius: 30px;
+}
+.navbar li a:hover {
+    background-color: var(--dark-accent);
+    text-decoration: none;
+    color: var(--main-light);
+}
+.navbar li a:active {
+    background-color: var(--light-accent);
+    text-decoration: none;
+}
+.header-title {
+    float: left;
+    color: var(--main-light);
+    display: block;
+    padding: 7px 10px;
+    padding-left: 50px;
+    text-align: center;
+    font-family: "nasalization";
+}
+.header-title a {
+  text-decoration: none;
+  color: var(--main-light);
+}
+.header-title a:hover {
+  text-decoration: none;
+  color: var(--main-light);
+}
+.header-title a:active {
+  text-decoration: none;
+}
+
+/* conten-styling */
+.content {
+    height: 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+.register-card {
+    background-color: var(--main-light);
+    border-radius: 30px;
+    height: 100%;
+    width: 80%; 
+    padding: 20px;
+}
+.login-card {
+  background-color: var(--main-light);
+  border-radius: 30px;
+  padding: 20px;
+  width: 400px;
+
+  /* position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+}
+.login-card-container {
+  padding: 5px;
+  color: var(--main-dark);
+}
+#loginHeader {
+  text-align: center;
+}
+#loginFooter {
+  display: flex;
+  justify-content: space-between;
+}
+#LoginBtn {
+  background-color: var(--dark-accent);
+  color:var(--main-light);
+  border-radius: 15px;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.cancelbtn {
+  width: auto;
+  color: var(--main-dark);
+  padding: 10px 10px;
+  border-radius: 15px;
+  background-color: var(--light-accent);
+  border: none;
+  cursor: pointer;
+}
+
+.login-card-container [type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin:0px 0px 20px 0px;
+    border-radius: 15px;
+}
+.add-job-card {
+  background-color: var(--main-light);
+  border-radius: 30px;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+}
+.apply-job-card {
+  color: var(--main-dark);
+  padding: 40px;
+}
+.apply-job-card h3{
+  font-weight: bolder;
+}
+.content-card {
+  color: var(--main-dark);
+  width: 100%;
+  list-style-type: none;
+}
+.content-card ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.job-card {
+  background-color: #f4fffc;
+  height: 100px;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 10px; 
+  display: flex;
+  justify-content: space-between;
+}
+.job-card h5 {
+  font-weight: bold;
+  margin: 3px;
+}
+.job-card #jobContainer1 {
+  padding: 10px 0px;
+  display: flex;
+  text-align: center;
+  margin: 0px 10px;
+}
+.job-card #job-act {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--main-dark);
+  color: var(--main-dark);
+  border-radius: 30px;
+  height: 40px;
+  width: 70px;
+  padding: 7px 0px;
+  margin: 0px 0px 0px 10px;
+}
+.job-card #jobContainer1 a:hover {
+  background-color: var(--main-dark);
+  text-decoration: none;
+  border-color: var(--main-dark);
+  color: var(--main-light);
+}
+.job-card #jobContainer1 a:active {
+  background-color: var(--main-dark);
+  text-decoration: none;
+}
+.job-card #jobContainer1 p {
+  background-color: #A7C4BC;
+  color: var(--dark-accent);
+  padding: 8px 10px;
+  border-radius: 20px;
+  position: absolute;
+  margin-right: -50%;
+  transform: translate(-100%,0%);
+  font-weight: bold;
+}
+.menu-card {
+  margin: 5px;
+  padding: 10px 25px;
+  height: 65px;
+  display: flex;
+  justify-content: flex-end;
+}
+.menu-card #addJob {
+  background-color:var(--main-dark);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  padding: 0px 0px;
+  text-align: center;
+  cursor: pointer;
+}
+.menu-card #myJob{
+  background-color:var(--main-dark);
+  font-weight: bold;
+  color: var(--main-light);
+  border-radius: 30px;
+  width: 160px;
+  height: 45px;
+  padding: 9px 0px;
+  margin: 0px 30px;
+  text-align: center;
+  cursor: pointer;
+}
+.menu-card #addJob a{
+  text-decoration: none;
+  color: var(--main-light);
+  font-size: 30px;
+  display: block;
+}
+.menu-card #addJob:hover #addJobMsg{
+  display: block;
+  
+}
+.menu-card #addJobMsg {
+  display: none;
+  background-color: var(--main-light);
+  padding: 10px;
+  border-radius: 20px;
+  color:var (var(--dark-accent));
+  opacity: 0.8;
+  position: absolute;
+  font-size: 17px;
+  margin-right: -50%;
+  transform: translate(-70%,0%);
+}
+.job-title{
+  height: 30px;
+  color: var(--main-dark);
+  margin: 10px 20px;
+}
+
+.job-title h5{
+  font-weight: bold;
+}
+.tbl-card{
+  margin: 0px 20px;
+}
+.app-tbl{
+  border-collapse: collapse;
+  width: 100%;
+}
+.app-tbl tr, .app-tbl td{
+  text-align: left;
+  padding: 6px 15px;
+  border-radius: 20px;
+  display: flex;
+}
+.app-tbl #col1{
+  width: 10%;
+  padding: 12px;
+  font-weight: bold;
+}
+.app-tbl #col2{
+  width: 70%;
+}
+.app-tbl #col3{
+  width: 20%;
+  justify-content: flex-end;
+}
+.app-tbl #c2{
+  background-color: #71998e;;
+  color: var(--light-accent);
+  margin: 3px 20px;
+  height: 30px;
+  padding: 3px 15px;
+  border-radius: 20px;
+  display: flex;
+}
+.app-tbl #c3 {
+  height: 100%;
+  padding: 6px 0px;
+}
+.app-tbl #c3 a{
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--main-dark);
+  border-radius: 20px;
+  color: var(--main-dark);
+  padding: 6px 15px;
+}
+.app-tbl #c3 a:hover {
+  background-color: var(--main-dark);
+  text-decoration: none;
+  border-color: var(--main-dark);
+  color: var(--main-light);
+}
+.app-tbl a:active {
+  background-color: var(--main-dark);
+  text-decoration: none;
+}
+.app-tbl tr:nth-child(odd){
+  background-color:#f4fffc;
+}
+.review-tbl {
+  margin: 40px 0px;
+}
+
+.review-tbl td {
+  padding: 10px;
+  font-size: 20px;
+}

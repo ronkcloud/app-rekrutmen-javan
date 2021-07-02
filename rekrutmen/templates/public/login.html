@@ -1,0 +1,28 @@
+{% extends 'public/base.html' %}
+
+{% block title %}
+login
+{% endblock %}
+{% block content %}
+<div class="content">
+    <div class="login-card">
+        <form method="POST">
+            <div class="login-card-container" id="loginHeader">
+                <h3>Login</h3>
+            </div>
+            <div class="login-card-container">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                
+                <button type="submit" id="LoginBtn">login</button>
+                <input type="checkbox" checked="checked"> Remember me
+            </div>
+            <div class="login-card-container" id="loginFooter">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

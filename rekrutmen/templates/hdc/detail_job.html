@@ -1,0 +1,53 @@
+{% extends 'public/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ job }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class = "content-card">
+        <div class="job-title" style="display: flex;">
+            <h5>{{ job }}</h5>
+        </div>
+        <div class="tbl-card">
+            <table class="app-tbl">
+                <caption style="display: none;">detail_job_tbl</caption>
+                {% for usr in job_list %}
+                <tr>
+                    <td id="col1">{{ usr.pelamar_id.member.name }}
+                    </td>
+                    <td id="col2">
+                        {% if usr.status == 'diterima' %}
+                            {% for test in job.tests.all %}
+                                {% if test in usr.tests.all %}
+                                    <div id="c2" style="background-color: var(--main-dark);">
+                                        <p style="margin-right: 10px;">{{ test }} </p>
+                                        <span>&#10003;</span>
+                                    </div>
+                                    {% else %}
+                                    <div id="c2">
+                                        <p style="margin-right: 10px;">{{ test }} </p>
+                                        <span style="font-weight: bold;">x</span>                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </td>
+                    <td id="col3">
+                        {% if usr.status == 'diterima' %}
+                        <div id="c2" style="background-color: var(--main-dark);">{{ usr.status }}</div>
+                        {% elif usr.status == 'ditolak' %}
+                        <div id="c2" style="background-color: rgb(241, 183, 75); color: var(--dark-accent);">{{ usr.status }}</div>
+                        {% else %}
+                        <div id="c2" name="review">{{ usr.status }}</div>
+                        {% endif %}
+                        <div id="c3"><a href="{% url 'detail_pelamar' job.id usr.pelamar_id.id %}">review</a></div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

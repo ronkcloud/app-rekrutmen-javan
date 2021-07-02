@@ -1,0 +1,18 @@
+{% extends 'public/base.html' %}
+
+{% block title %}
+Lamar {{ dataset.job_name }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="apply-job-card">    
+        <h3>{{ dataset.job_name }}</h3>
+        <p>{{ dataset.description }}</p>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="submit" value="lamar">
+        </form>
+    </div>
+</div>
+{% endblock %}

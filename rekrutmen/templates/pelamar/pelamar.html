@@ -1,0 +1,46 @@
+{% extends 'public/base.html' %}
+
+{% block title %}
+Pelamar | {{ user.member.name }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class = "content-card">
+        <ul>
+            {% for data in dataset %}
+            <li>
+                <div class="job-card">
+                    <div>
+                        <h5>{{ data.job.job_name }}</h5>
+                        <p>{{ data.job.description }}</p>
+                    </div>
+                    {% if data.status == 'diterima' %}
+                    <div id="jobContainer1">
+                        <p style="background-color:var(--main-dark); color: var(--main-light);">
+                            {{ data.status }}
+                        </p>
+                        <a href="{% url 'test' data.job.id %}" id="job-act" style="width: 120px;">
+                            Kerjakan test
+                        </a>
+                    </div> 
+                    {% elif data.status == 'ditolak' %}
+                    <div id="jobContainer1">
+                        <p style="background-color:rgb(241, 183, 75);">
+                            {{ data.status }}
+                        </p>
+                    </div> 
+                    {% else %}
+                    <div id="jobContainer1">
+                        <p>
+                            {{ data.status }}
+                        </p>
+                    </div> 
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

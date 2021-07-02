@@ -1,0 +1,53 @@
+{% extends 'public/base.html' %}
+
+{% block title %}
+rekrut
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="content-card">
+        {% if is_hdc == True %}
+        <div class="menu-card"> 
+            <a href="{% url 'hdc' %}" id="myJob">
+                lowongan saya
+            </a>
+            <div id="addJob">
+                <a href="{% url 'add_job' %}">+</a>
+                <div id="addJobMsg">Tambah Lowongan</div>
+            </div>             
+        </div>
+        {% endif %}  
+        <ul>
+            {% for job in job_list %}
+            <li>
+                <div class="job-card">
+                    <div>
+                        <h5>{{ job.job_name }}</h5>
+                        <p>{{ job.description }}</p>
+                    </div>
+                    {% if is_pelamar == True %}
+                    <div style="display: flex">
+                            {% if job in usr_job_list  %}
+                                <div id="jobContainer1">
+                                    <p>sudah melamar</p>
+                                </div>
+                            {% else %}
+                            <div id="jobContainer1">
+                                <a href="{% url 'lamar' job.id %}" id="job-act">
+                                    lamar
+                                </a>
+                            </div>
+                            {% endif %}
+                    </div>
+                    {% elif is_hdc == True %}
+
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+

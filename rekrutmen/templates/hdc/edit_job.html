@@ -1,0 +1,39 @@
+{% extends 'public/base.html' %}
+{% load crispy_forms_tags %} 
+
+{% block title %}
+Edit | {{ dataset.job_name }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="add-job-card">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.job_name.label }} :
+            <p>
+                <input type="text"
+                name="{{ form.job_name.name }}"
+                id="{{ form.job_name.id }}"
+                value="{{ dataset.job_name }}"
+                style="width: 500px;">
+                
+            </p>
+            {{ form.description.label }} :
+            <p>
+                <textarea type="text"
+                name="{{ form.description.name }}"
+                id="{{ form.description.id }}"
+                maxlength="{{ form.description.field.max_lengt }}"
+                style="height: 200px; width: 500px;">{{ dataset.description }}
+                </textarea>
+            </p>
+            {% for test in form.tests %}
+            <p>{{ test }}</p>
+            {% endfor %}
+            <input type="submit" value="update">
+        </form>
+    </div>   
+</div>
+{% endblock %}
+

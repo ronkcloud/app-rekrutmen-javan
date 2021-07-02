@@ -1,0 +1,36 @@
+{% extends 'public/base.html' %}
+
+{% block title %}
+HDC | {{ user.member.name }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class = "content-card">
+        <ul>
+            {% for data in dataset %}
+            <li>
+                <div class="job-card">
+                    <div>
+                        <h5>{{ data.job_name }}</h5>
+                        <p>{{ data.description }}</p>
+                    </div>
+                    <div style="display: flex">
+                        <div id="jobContainer1">
+                            <a href="{% url 'detail_job' data.id %}" id="job-act">
+                                detail
+                            </a>
+                        </div>
+                        <div id="jobContainer1">
+                            <a href="{% url 'edit_job' data.id %}" id="job-act">
+                                edit
+                            </a>
+                        </div>
+                    </div>  
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

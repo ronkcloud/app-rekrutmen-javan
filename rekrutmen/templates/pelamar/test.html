@@ -1,0 +1,28 @@
+{% extends 'public/base.html' %}
+{% load crispy_forms_tags %} 
+
+{% block title %}
+Kerjakan test {{ usr_tests.job }}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="add-job-card">
+        <form method="POST">       
+        {% csrf_token %}
+        {% for test in test_list.tests.all %}
+            <p>
+                {{ test.id }}
+                <input type="checkbox" id="id_test_{{ test.id }}" name="tests" value="{{ test }}"
+                    {% if test in usr_tests.tests.all %} 
+                        checked
+                    {% endif %}>
+                <label for="id_test_{{ test.id }}">{{ test }}</label>
+            </p>
+        {% endfor %}
+        <input type="submit" value="Kerjakan">
+        </form>
+    </div>
+
+</div>
+{% endblock %}
